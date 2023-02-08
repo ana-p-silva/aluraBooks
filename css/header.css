@@ -1,0 +1,155 @@
+.cabecalho {
+    align-items: center;
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.cabecalho__menu-hamburguer {
+    background-image: url("../img/Menu.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+.container {
+    align-items: center;
+    display: flex;
+}
+.container__botao:checked ~ .lista-menu {
+    display: block;
+}
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+    background-image: url("../img/Menu\ Aberto.png");
+}
+.container__botao:checked ~ .container__rotulo {
+background-image: var(--gradient-azul);
+}
+.container__imagem {
+    padding: 1em;
+}
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--branco);
+    width: 60vw;
+}
+.lista-menu__titulo,
+.lista-menu__item {
+    line-height: 1em;
+    padding: 1em;
+}
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+.lista-menu__link {
+    background-image: var(--gradient-azul);
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.container__botao,
+.container__titulo,
+.container__texto,
+.opcoes {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .container__titulo,
+    .container__titulo--negrito {
+        font-family: var(--font-secundaria);
+    }
+    .container__titulo {
+        display: block;
+        font-size: 30px;
+    }
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+    .opcoes {
+        display: flex;
+    }
+    .opcoes__item {
+        text-transform: uppercase;
+        padding: 2em  1rem;
+    }
+    .opcoes__link { 
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .container__imagem--transparente,
+    .cabecalho__menu-hamburguer,
+    .opcoes__botao,
+    .container__texto {
+        display: none;
+    }
+
+    .opcoes__botao:checked ~ .lista-menu {
+        display: block;
+    }
+    .opcoes__botao:checked ~ .opcoes__rotulo>.opcoes__item {
+        background: var(--gradient-azul);
+        color:var(--branco);
+    }
+    .lista-menu {
+        width: auto;
+    }
+    .lista-menu__item:hover {
+        background: var(--gradient-azul);
+    }
+    .lista-menu__item:hover >.lista-menu__link{
+        -webkit-text-fill-color: var(--branco);
+    }
+
+    /* .lista-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: var(--branco);
+        width: auto;
+    }
+    .opcoes-menu__item {
+        line-height: 1em;
+        padding: 1em;
+    }
+    .opcoes-menu__link {
+        background-image: var(--gradient-azul);
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }*/
+    /* Changing the background color of the menu item to blue and the text color to red when you hover
+   over it. */
+    /* .lista-menu__item:hover {
+        background-color: var(--azul);
+    }
+    .lista-menu__item a:hover {
+        color: red;
+        background-image: none;
+    } */
+}
+@media screen and (min-width: 1728px) {
+    .cabecalho {
+        padding: 0 2em;
+    }
+    .container__texto {
+        display: block;
+    }
+    .container__link {
+        align-items: center;
+        text-decoration: none;
+        display: flex;
+        color: var(--preto);
+    }
+    .opcoes {
+        margin-right: auto;
+    }
+}
